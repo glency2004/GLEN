@@ -1,0 +1,135 @@
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="Pets.css"/>
+ <title>ENTREGA VOLUNTARIA</title>
+    </head>
+    <body>
+    <!--Menu de navegacion del sitio-->
+    
+<ul class="navbar">
+    <li> <a href="CEMZOO SACABA.html">CEMZOO SACABA</a></li>
+    <li> <a href="VIGILANCIA.htm">VIGILANCIA EPIDEMIOLOGICA</a></li>
+    <li> <a href="ENTREGA VOLUNTARIA.htm">ENTREGA VOLUNTARIA </a> </li>
+    <li> <a href="indexFormulario.hyml.html">FORMULARIO DE REGISTRO DE MASCOTAS</a></li>
+</ul> 
+         
+
+            
+<!-------------------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Características de la Mascota</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_CLAVE_DE_API"></script>
+    <script src="map.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formulario de Características de la Mascota</h1>
+        <form action="process.php" method="POST" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Información General</legend>
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" name="codigo" required>
+
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="nombre_propietario">Nombre Propietario/Denunciante:</label>
+                <input type="text" id="nombre_propietario" name="nombre_propietario" required>
+
+                <label for="zona">Zona:</label>
+                <div id="map"></div>
+
+                <label for="motivo">Motivo:</label>
+                <select id="motivo" name="motivo" required>
+                    <option value="entrega_voluntaria">Entrega Voluntaria</option>
+                    <option value="denuncia">Denuncia</option>
+                    <option value="captura">Captura</option>
+                    <option value="vigilancia_epidemiologica">Vigilancia Epidemiológica</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Características de la Mascota</legend>
+                <label for="fotografia">Fotografía:</label>
+                <input type="file" id="fotografia" name="fotografia" accept="image/*" required>
+
+                <label for="nombre_mascota">Nombre:</label>
+                <input type="text" id="nombre_mascota" name="nombre_mascota" required>
+
+                <label for="especie">Especie:</label>
+                <select id="especie" name="especie" required>
+                    <option value="canino">Canino</option>
+                    <option value="felino">Felino</option>
+                </select>
+
+                <label for="raza">Raza:</label>
+                <input type="text" id="raza" name="raza" required>
+
+                <label for="edad">Edad:</label>
+                <select id="edad" name="edad" required>
+                    <option value="cachorro">Cachorro (0 a 1 año)</option>
+                    <option value="adulto">Adulto (1 a 8 años)</option>
+                    <option value="longevo">Longevo (más de 8 años)</option>
+                </select>
+
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="hembra">Hembra</option>
+                    <option value="macho">Macho</option>
+                </select>
+
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" required>
+
+                <label for="estado_mascota">Estado de la Mascota:</label>
+                <select id="estado_mascota" name="estado_mascota" required>
+                    <option value="sano">Sano</option>
+                    <option value="enfermedad_leve">Enfermedad Leve</option>
+                    <option value="enfermedad_grave">Enfermedad Grave</option>
+                    <option value="enfermedad_terminal">Enfermedad Terminal</option>
+                    <option value="atropellado">Atropellado</option>
+                    <option value="sospechoso_rabia">Sospechoso a Rabia</option>
+                </select>
+
+                <label for="observaciones">Observaciones:</label>
+                <textarea id="observaciones" name="observaciones" rows="4" placeholder="Ingrese observaciones aquí"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Retirado</legend>
+                <label for="nombre_retirado">Nombre:</label>
+                <input type="text" id="nombre_retirado" name="nombre_retirado">
+
+                <label for="fecha_retirado">Fecha:</label>
+                <input type="date" id="fecha_retirado" name="fecha_retirado">
+            </fieldset>
+
+            <fieldset>
+                <legend>Adopción</legend>
+                <label for="nombre_adopcion">Nombre:</label>
+                <input type="text" id="nombre_adopcion" name="nombre_adopcion">
+
+                <label for="fecha_adopcion">Fecha:</label>
+                <input type="date" id="fecha_adopcion" name="fecha_adopcion">
+            </fieldset>
+
+            <fieldset>
+                <legend>Procedimiento según Normativa</legend>
+                <label for="fecha_procedimiento">Fecha:</label>
+                <input type="date" id="fecha_procedimiento" name="fecha_procedimiento">
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+
+</html>
